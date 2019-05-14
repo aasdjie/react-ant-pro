@@ -1,0 +1,56 @@
+env:
+  # 支持浏览器环境
+  browser: true
+  commonjs: true
+  # 支持引入 es6 模块
+  es6: true
+  node: true
+extends: 'eslint:recommended'
+parserOptions:
+  ecmaFeatures:
+    # 解析 jsx
+    jsx: true
+    # ecma 版本
+  ecmaVersion: 2018
+  sourceType: module
+plugins:
+  # 集成 prettier
+  - prettier
+  # 开启 react 的支持
+  # npm install eslint-plugin-react --dev --exact
+  - react
+rules:
+  # 使用 prettier 规则格式化代码，显示 eslint error
+  # 需要 npm install eslint-plugin-prettier prettier --dev --exact
+  prettier/prettier:
+    - error
+    - printWidth: 80 # 行宽
+      tabWidth: 2 # 缩进 2 个空格
+      semi: false # 无分号
+      singleQuote: true # 单引号
+      trailingComma: all # 逗号末尾
+      eslintIntegration: true # eslint 集成
+      no-console: off,
+  # 缩进 2 个空格
+  indent:
+    - error
+    - 2
+  # Unix 换行风格 (\n)
+  linebreak-style:
+    - error
+    - unix
+  # 单引号
+  quotes:
+    - error
+    - single
+  # 无分号
+  semi:
+    - error
+    - never
+  # 建议使用 const
+  prefer-const:
+    - error
+  # 防止变量或组件 react 中被误报
+  react/jsx-uses-react: 1
+  react/jsx-uses-vars: 2
+  react/jsx-sort-props: 0

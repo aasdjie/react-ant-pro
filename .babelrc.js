@@ -4,7 +4,7 @@ module.exports = {
       'babel-plugin-module-resolver',
       {
         alias: {
-          components: './src/components',
+          components: './src/base',
         },
       },
     ],
